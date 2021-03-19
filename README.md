@@ -7,8 +7,8 @@ To install PHP for your preferred platform, refer this site: [PHP Installation a
 
 ## usage
 ```
-git clone https://github.com/sudharshanr15/covid-19-tracker.git 
-cd ./covid-19-tracker/public
-php -S localhost:8081
+$ git clone https://github.com/sudharshanr15/covid-19-tracker.git 
+$ cd ./covid-19-tracker/public
+$ php -S localhost:8081
 ```
 > Note: You can change the valid port as per your need, but to make sure that no other platforms are running on the same port.
