@@ -4,5 +4,4 @@ This application is able to display all up-to-date result of corona cases in Ind
 ```
 git clone https://github.com/sudharshanr15/covid-19-tracker.git 
 cd .covid-19-tracker/public
-
 ```
