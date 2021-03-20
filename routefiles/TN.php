@@ -18,8 +18,6 @@ $stateLine = explode(",", $arr[0]);
 for($i=0; $i<count($stateLine); $i++){
     $states[$stateLine[$i]] = $i;
 }
-var_dump($states);
-
 $today = $arr[$count - 2];
 $today = explode(",", $today);
 $value = isset($_POST['options']) ? $_POST['options'] : 10;
