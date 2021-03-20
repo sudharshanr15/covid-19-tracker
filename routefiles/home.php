@@ -23,44 +23,14 @@ $today = $arr[0];
 $yesterday = $arr[1];
 $todayArr = explode(',', $today);
 $yesterdayArr = explode(',', $yesterday);
+$days = [$todayArr, $yesterdayArr];
 ?>
 <div class="container">
     <h2><a href="/India/dailyrecords" class="text-dark">Corona cases in India:</a></h2>
     <div class="d-flex justify-content-between">
-        <table class="table table-hover shadow-lg" style="width: 40%">
-            <thead>
-                <tr>
-                    <th colspan="2" class="text-center table-dark">Today</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>New cases: </th>
-                    <td class="text-danger">+<?=$todayArr[2];?></td>
-                </tr>
-                <tr>
-                    <th>Recovered: </th>
-                    <td class="text-success">+<?=$todayArr[4];?></td>
-                </tr>
-                <tr>
-                    <th >Death: </th>
-                    <td class="text-danger">+<?=$todayArr[6];?></td>
-                </tr>
-                <tr>
-                    <th>Total cases: </th>
-                    <td><?=$todayArr[3];?></td>
-                </tr>
-                <tr>
-                    <th>Total Recovered: </th>
-                    <td><?=$todayArr[5];?></td>
-                </tr>
-                <tr>
-                    <th>Total Deceased: </th>
-                    <td><?=$todayArr[7];?></td>
-                </tr>
-            </tbody>
-        </table>
-
+        <?php 
+        foreach ($days as $day) {
+        ?>
         <table class="table table-hover shadow-lg" style="width: 40%">
             <thead>
                 <tr>
@@ -70,30 +40,33 @@ $yesterdayArr = explode(',', $yesterday);
             <tbody>
                 <tr>
                     <th>New cases: </th>
-                    <td class="text-danger">+<?=$yesterdayArr[2];?></td>
+                    <td class="text-danger">+<?=$day[2];?></td>
                 </tr>
                 <tr>
                     <th>Recovered: </th>
-                    <td class="text-success">+<?=$yesterdayArr[4];?></td>
+                    <td class="text-success">+<?=$day[4];?></td>
                 </tr>
                 <tr>
                     <th>Death: </th>
-                    <td class="text-danger">+<?=$yesterdayArr[6];?></td>
+                    <td class="text-danger">+<?=$day[6];?></td>
                 </tr>
                 <tr>
                     <th>Total cases: </th>
-                    <td><?=$yesterdayArr[3];?></td>
+                    <td><?=$day[3];?></td>
                 </tr>
                 <tr>
                     <th>Total Recovered: </th>
-                    <td><?=$yesterdayArr[5];?></td>
+                    <td><?=$day[5];?></td>
                 </tr>
                 <tr>
                     <th>Total Deceased: </th>
-                    <td><?=$yesterdayArr[7];?></td>
+                    <td><?=$day[7];?></td>
                 </tr>
             </tbody>
         </table>
+        <?php
+        }
+        ?>
     </div>
 
     <h3 class="my-2"><a href="/India/state/karnataka" class="text-dark">Karnataka:</a></h3>
@@ -119,9 +92,7 @@ $yesterdayArr = explode(',', $yesterday);
                 for($i=($count), $j=0; $j<3; $j++, $i--){
                     $line = $arr[$i];
                     $line = explode(",", $line);
-                    // echo $arr[$i];
                     if(3-$x == 2){
-                        // echo "<tr><th>$line[0]</th>";
                             $temp = $line[20];
                             echo "<tr><th>Deceased: <td class='text-danger'>+$temp</td></th></tr>";
                             $x++;
