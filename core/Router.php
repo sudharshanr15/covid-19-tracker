@@ -11,6 +11,7 @@ class Router{
     }
 
     public function get($path, $callback){
+        $path = strtolower($path);
         $this->routes['get'][$path] = $callback;
     }
 
@@ -20,7 +21,7 @@ class Router{
         $callback = $this->routes[$method][$path] ?? false;
         if($callback === false){
             http_response_code(404);
-            return "Page not found";
+            return renderView("_404");
         }
 
         return renderView($callback);
