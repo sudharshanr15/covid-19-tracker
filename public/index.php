@@ -1,5 +1,6 @@
 <?php
 require "./../core/Application.php";
+// if the result of cases was not correct, then try to uncomment the below code reload the page and comment it again.
 // include "./../filedownloads.php";
 use app\core\Application;
 $app = new Application();
